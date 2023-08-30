@@ -1,40 +1,19 @@
-package com.example.noCountry.Entity;
+package com.example.noCountry.DTO;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import java.util.UUID;
-import org.antlr.v4.runtime.misc.NotNull;
+import com.example.noCountry.Entity.Location;
+import com.example.noCountry.Entity.User;
 
-@Entity
-public class Publication {
-    @Id
-    @GeneratedValue(generator = "uuid")
-    private UUID id;
-    @NotNull
+public class PublicationDTO {
     private String name;
-    @NotNull
     private String body;
-    @NotNull
     private User owner;
-    @NotNull
     private String keywords;
-    @NotNull
     private Location location;
 
-    public Publication() {
+    public PublicationDTO() {
     }
 
-    public Publication(UUID id, String name, String body, User owner, String keywords, Location location) {
-        this.id = id;
-        this.name = name;
-        this.body = body;
-        this.owner = owner;
-        this.keywords = keywords;
-        this.location = location;
-    }
-    
-    public Publication(String name, String body, User owner, String keywords, Location location) {
+    public PublicationDTO(String name, String body, User owner, String keywords, Location location) {  
         this.name = name;
         this.body = body;
         this.owner = owner;
@@ -56,14 +35,6 @@ public class Publication {
 
     public void setLocation(Location location) {
         this.location = location;
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
     }
 
     public String getName() {
