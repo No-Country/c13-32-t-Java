@@ -109,15 +109,18 @@ public class PublicationController {
     @PostMapping
     public ResponseEntity<?> insertNewPublication(@RequestBody PublicationDTO newPublication){
         try {
+            
             if (newPublication == null || newPublication.getBody() == null || newPublication.getKeywords() == null 
                 || newPublication.getLocation() == null || newPublication.getName() == null || newPublication.getOwner() == null){
-                return new ResponseEntity("Todos los campos son obligatorios", HttpStatus.BAD_REQUEST);
+                return ResponseEntity.badRequest().body("Todos los campos son obligatorios");
             }
             publicationService.insertNewPublication(newPublication);
             return ResponseEntity.ok("Publicacion creada correctamente");
             
         } catch (Exception e){
-            return new ResponseEntity("La publicacion no pudo crearse correctamente, contacte con soporte", HttpStatus.BAD_REQUEST);
+            System.out.println("SADASDASD");
+            System.out.println(e);
+            return ResponseEntity.badRequest().body("La publicacion no pudo crearse correctamente, contacte con soporte");
         }
     }
     

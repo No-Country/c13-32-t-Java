@@ -6,14 +6,14 @@ import com.example.noCountry.Entity.User;
 public class PublicationDTO {
     private String name;
     private String body;
-    private User owner;
+    private String owner;
     private String keywords;
     private Location location;
 
     public PublicationDTO() {
     }
 
-    public PublicationDTO(String name, String body, User owner, String keywords, Location location) {  
+    public PublicationDTO(String name, String body, String owner, String keywords, Location location) {  
         this.name = name;
         this.body = body;
         this.owner = owner;
@@ -53,11 +53,11 @@ public class PublicationDTO {
         this.body = body;
     }
 
-    public User getOwner() {
+    public String getOwner() {
         return owner;
     }
 
-    public void setOwner(User owner) {
+    public void setOwner(String owner) {
         this.owner = owner;
     }
 }

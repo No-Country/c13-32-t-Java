@@ -34,8 +34,7 @@ public class PublicationService {
         try {
             Publication auxPublication = new Publication(
                     newPublication.getName(),
-                    newPublication.getBody(),
-                    newPublication.getOwner(),
+                    newPublication.getBody(),  
                     newPublication.getKeywords(),
                     newPublication.getLocation()
             );
@@ -57,9 +56,6 @@ public class PublicationService {
             }
             if (updatePublication.getLocation() != null){
                 oldPublication.setLocation(updatePublication.getLocation());
-            }
-            if (updatePublication.getOwner() != null){
-                oldPublication.setOwner(updatePublication.getOwner());
             }
             if (updatePublication.getLocation() != null){
                 oldPublication.setLocation(updatePublication.getLocation());

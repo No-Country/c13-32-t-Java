@@ -33,6 +33,13 @@ public class Publication {
         this.keywords = keywords;
         this.location = location;
     }
+
+    public Publication(String name, String body, String keywords, Location location) {
+        this.name = name;
+        this.body = body;
+        this.keywords = keywords;
+        this.location = location;
+    }
     
     public Publication(String name, String body, User owner, String keywords, Location location) {
         this.name = name;
