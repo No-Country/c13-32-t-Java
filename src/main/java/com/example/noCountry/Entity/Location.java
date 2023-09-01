@@ -1,28 +1,25 @@
 package com.example.noCountry.Entity;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public enum Location {
-    MENDOZA,
-    CORDOBA,
-    SANLUIS,
-    SANJUAN,
-    BUENOSAIRES,
-    TUCUMAN,
-    SANTAFE,
-    CHUBUT,
-    RIONEGRO,
-    SANTACRUZ,
-    LAPAMPA,
-    MISIONES,
-    CATAMARCA,
-    ENTRERIOS,
-    JUJUY,
-    CHACO,
-    CORRIENTES,
-    FORMOSA,
-    LARIOJA,
-    SALTA,
-    NEUQUEN,
-    SANTIAGODELESTERO,
-    TIERRADELFUEGO
+import java.util.UUID;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name="ciudad")
+public class Location {
+
+    @Id
+    @Column(name = "id")
+    private UUID id;
+
+    private String nombre;
 }

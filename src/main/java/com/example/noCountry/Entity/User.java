@@ -1,12 +1,8 @@
 
 package com.example.noCountry.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
@@ -18,61 +14,32 @@ import lombok.Data;
 @Data
 public class User implements UserDetails {
     @Id
-    @GeneratedValue(generator = "uuid")
-    private UUID id;
-    @Column
+    @GeneratedValue(generator = "id")
+    @Column(name="id")
+    private int id;
+    @Column(name="email")
     private String email;
+    @Column(name="nombre")
+    private String nombre;
+    @Column(name="apellido")
+    private String apellido;
+    @Column(name="password")
     private String password;
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
+    @JoinColumn(name = "rol_id")
     private Role role;
+    @Column(name="activo")
+    private int activo;
 
-    public User() {
-    }
 
-    public User(UUID id, String email, String password, Role role) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.role = role;
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority(role.getName()));
     }
 
     @Override
     public String getUsername() {
-        return email;
-    }
-
-    public void setUsername(String email) {
-        this.email = email;
-    }
-    
-    @Override
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(role.name()));
+        return null;
     }
 
     @Override

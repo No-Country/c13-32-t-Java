@@ -1,9 +1,6 @@
 package com.example.noCountry.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,12 +11,11 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="rol")
-public class Role {
+@Table(name="provincia")
+public class Provincia {
 
     @Id
     @Column(name = "id")
     private UUID id;
-    @Column(name="nombre")
-    private String name;
+    private String nombre;
 }
