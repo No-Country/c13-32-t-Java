@@ -16,32 +16,85 @@ public class Publication {
     @NotNull
     private String body;
     @NotNull
-    private User owner;
+    private Employer owner;
     @NotNull
     private String keywords;
     @NotNull
     private Location location;
+    @NotNull
+    private Integer schedule;
+    @NotNull
+    private Integer vacancies;
+    @NotNull
+    private Industry industry;
+    @NotNull
+    private String contractType;
+    @NotNull
+    private String modalityWork;
+    @NotNull
+    private Float salary;
+    @NotNull
+    private String city;
+    @NotNull
+    private String seniority;
+    private String description;
+    private String chores;
+    private String requirements;
+    private String benefit;
+    
 
     public Publication() {
     }
 
-    public Publication(UUID id, String name, String body, User owner, String keywords, Location location) {
+    public Publication(UUID id, String name, String body, Employer owner,
+            String keywords, Location location, Integer schedule, Integer vacancies,
+            Industry industry, String contractType, String modalityWork, Float salary,
+            String city, String seniority, String description, String chores, String requirements, String benefit) {
         this.id = id;
         this.name = name;
         this.body = body;
         this.owner = owner;
         this.keywords = keywords;
         this.location = location;
+        this.schedule = schedule;
+        this.vacancies = vacancies;
+        this.industry = industry;
+        this.contractType = contractType;
+        this.modalityWork = modalityWork;
+        this.salary = salary;
+        this.city = city;
+        this.seniority = seniority;
+        this.description = description;
+        this.chores = chores;
+        this.requirements = requirements;
+        this.benefit = benefit;
     }
-    
-    public Publication(String name, String body, User owner, String keywords, Location location) {
+
+    public Publication(String name, String body, Employer owner, String keywords, Location location,
+            Integer schedule, Integer vacancies, Industry industry, String contractType, String modalityWork,
+            Float salary, String city, String seniority, String description, String chores, String requirements,
+            String benefit) {
         this.name = name;
         this.body = body;
         this.owner = owner;
         this.keywords = keywords;
         this.location = location;
+        this.schedule = schedule;
+        this.vacancies = vacancies;
+        this.industry = industry;
+        this.contractType = contractType;
+        this.modalityWork = modalityWork;
+        this.salary = salary;
+        this.city = city;
+        this.seniority = seniority;
+        this.description = description;
+        this.chores = chores;
+        this.requirements = requirements;
+        this.benefit = benefit;
     }
-
+    
+    
+    
     public String getKeywords() {
         return keywords;
     }
@@ -82,11 +135,11 @@ public class Publication {
         this.body = body;
     }
 
-    public User getOwner() {
+    public Employer getOwner() {
         return owner;
     }
 
-    public void setOwner(User owner) {
+    public void setOwner(Employer owner) {
         this.owner = owner;
     }
 }
