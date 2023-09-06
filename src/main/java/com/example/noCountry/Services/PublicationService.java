@@ -1,5 +1,5 @@
 
-package com.example.noCountry.Service;
+package com.example.noCountry.Services;
 
 import com.example.noCountry.DTO.PublicationDTO;
 import com.example.noCountry.Entity.Publication;
@@ -33,10 +33,23 @@ public class PublicationService {
     public void insertNewPublication(PublicationDTO newPublication){
         try {
             Publication auxPublication = new Publication(
-                    newPublication.getName(),
-                    newPublication.getBody(),  
-                    newPublication.getKeywords(),
-                    newPublication.getLocation()
+                newPublication.getName(),
+                newPublication.getBody(),
+                newPublication.getOwner(),
+                newPublication.getKeywords(),
+                newPublication.getLocation(),
+                newPublication.getSchedule(),
+                newPublication.getVacancies(),
+                newPublication.getIndustry(),
+                newPublication.getContractType(),
+                newPublication.getModalityWork(),
+                newPublication.getSalary(),
+                newPublication.getCity(),
+                newPublication.getSeniority(),
+                newPublication.getDescription(),
+                newPublication.getChores(),
+                newPublication.getRequirements(),
+                newPublication.getBenefit()
             );
             
             publicationRepository.save(auxPublication);

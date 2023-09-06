@@ -23,19 +23,82 @@ public class User implements UserDetails {
     @Column
     private String email;
     private String password;
+    private String firstname;
+    private String lastname;
+    private Integer contactNum;
     @Enumerated(EnumType.STRING)
     private Role role;
+    private Location location;
+    private String country; 
 
     public User() {
     }
 
-    public User(UUID id, String email, String password, Role role) {
+    public User(UUID id, String email, String password, String firstname, String lastname, Integer contactNum, Role role, Location location, String country) {
         this.id = id;
         this.email = email;
         this.password = password;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.contactNum = contactNum;
         this.role = role;
+        this.location = location;
+        this.country = country;
     }
 
+    public User(String email, String password, String firstname, String lastname, Integer contactNum, Role role, Location location, String country) {
+        this.email = email;
+        this.password = password;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.contactNum = contactNum;
+        this.role = role;
+        this.location = location;
+        this.country = country;
+    }
+    
+    
+    
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+    
+    public Integer getContactNum() {
+        return contactNum;
+    }
+
+    public void setContactNum(Integer contactNum) {
+        this.contactNum = contactNum;
+    }
+    
+    private String getFirstname(){
+        return firstname;
+    }
+    
+    private void setFirstname(String firstname){
+        this.firstname = firstname;
+    }
+    
+    private String getLastname(){
+        return lastname;
+    }
+    
+    private void setLastname(String lastname){
+        this.lastname = lastname;
+    }
+    
     public UUID getId() {
         return id;
     }

@@ -2,7 +2,7 @@ package com.example.noCountry.Controllers;
 
 import com.example.noCountry.DTO.PublicationDTO;
 import com.example.noCountry.Entity.Publication;
-import com.example.noCountry.Service.PublicationService;
+import com.example.noCountry.Services.PublicationService;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.UUID;
