@@ -13,6 +13,7 @@ import { BotFoundPagesComponent } from './components/pages/bot-found-pages/bot-f
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './components/search/search/search.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

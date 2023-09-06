@@ -1,25 +1,15 @@
 package com.example.noCountry.Entity;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import java.util.Collection;
+import java.util.Date;
 import java.util.UUID;
 import lombok.Data;
 
 @Entity
 @Data
-public class Employee extends User{
-    
-    @Id
-    @GeneratedValue(generator = "uuid")
-    private UUID id;
-    
+public class Employee extends User {
+
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "employee_publication",
@@ -27,4 +17,29 @@ public class Employee extends User{
             inverseJoinColumns = @JoinColumn(name = "publication_id", referencedColumnName = "id")
     )
     private Collection<Publication> postulations;
+
+    @Column
+    private String nameEmployee;
+
+    @Column
+    private String lastNameEmployee;
+
+    @Column(name = "date")
+    private Date date;
+
+    @Enumerated(EnumType.STRING)
+    private TipoId tipoId;
+
+    @ManyToOne // Muchos empleados pertenecen a una provincia
+    @JoinColumn(name = "provincia_id")
+    private Provincia provincia;
+
+    @ManyToOne // Muchos empleados pertenecen a una ciudad
+    @JoinColumn(name = "ciudad_id")
+    private Ciudad ciudad;
+
+    @Column(name = "phone")
+    private String phone;
+
+
 }

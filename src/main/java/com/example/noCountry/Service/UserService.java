@@ -1,4 +1,4 @@
-package com.example.noCountry.Services;
+package com.example.noCountry.Service;
 
 import com.example.noCountry.Entity.User;
 import com.example.noCountry.Entity.Role;
