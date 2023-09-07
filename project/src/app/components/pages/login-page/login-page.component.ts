@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent {
+  email: string = '';
+  password: string = '';
+  ingresar() {
+    if ( this.email && this.password) {
+      // Limpia los campos después del registro
+      this.email = '';
+      this.password = '';
+    } else {
+      console.log('Completa todos los campos');
+    }
+  }
 
 }

@@ -1,0 +1,67 @@
+.nav{
+    display: flex;
+    background-color: white;
+    width: 1366px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+.nav-logo{
+    width: 15%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    text-align: center;  
+    align-items: center;
+}
+.activo{
+    text-decoration: none;
+    color: white;
+}
+.nav-center{
+    display: flex;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+}
+.item a{
+    text-decoration: none;
+    color: black;
+}
+.nav-right{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-right button {
+    border: solid #084656;
+    border-radius: 25px;
+    height: 48px;
+    width: 157px;
+    background-color: transparent;
+
+    /* BUTTON */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+    text-align: center;
+    color: #084656;
+    
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+}
+.nav-right button:hover{
+    background-color: #084656;
+    color: white;
+}

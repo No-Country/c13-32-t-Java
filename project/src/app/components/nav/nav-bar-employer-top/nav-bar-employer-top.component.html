@@ -1,0 +1,11 @@
+<div class="nav-superior">
+    <div class="nav-logo">
+        <a routerLink="/home" routerLinkActive="activo" class="activo">SILVER 40</a>
+    </div>
+    <div class="dashboard-content">
+        <div class="user-logo" (click)="toggleDropdown()">
+            <img src="../../../../assets/user-circle.svg" alt="" class="user">
+        </div>
+        <app-drop-down-window [isDropdownOpen]="isDropdownOpen" (toggleDropdownEvent)="toggleDropdown()"></app-drop-down-window>
+    </div>
+</div>
