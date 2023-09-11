@@ -20,7 +20,7 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(generator = "uuid")
     private UUID id;
-    @Column
+    @Column(nullable = false, unique = true)
     private String email;
     private String password;
     private String firstname;
@@ -83,19 +83,19 @@ public class User implements UserDetails {
         this.contactNum = contactNum;
     }
     
-    private String getFirstname(){
+    public String getFirstname(){
         return firstname;
     }
     
-    private void setFirstname(String firstname){
+    public void setFirstname(String firstname){
         this.firstname = firstname;
     }
     
-    private String getLastname(){
+    public String getLastname(){
         return lastname;
     }
     
-    private void setLastname(String lastname){
+    public void setLastname(String lastname){
         this.lastname = lastname;
     }
     

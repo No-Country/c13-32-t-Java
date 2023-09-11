@@ -18,11 +18,6 @@ public class Employee extends User {
     )
     private Collection<Publication> postulations;
 
-    @Column
-    private String nameEmployee;
-
-    @Column
-    private String lastNameEmployee;
 
     @Column(name = "date")
     private Date date;
@@ -38,8 +33,6 @@ public class Employee extends User {
     @JoinColumn(name = "ciudad_id")
     private Ciudad ciudad;
 
-    @Column(name = "phone")
-    private String phone;
 
 
 }

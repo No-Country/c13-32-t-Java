@@ -11,13 +11,9 @@ import java.util.Date;
 @Data
 public class EmployeeDTO {
 
-    private String nameEmployee;
-
-    private String lastNameEmployee;
 
     private Provincia provincia;
 
     private Ciudad ciudad;
 
-    private String phone;
 }
