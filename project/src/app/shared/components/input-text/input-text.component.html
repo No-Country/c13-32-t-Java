@@ -1,0 +1,8 @@
+<label *ngIf="label">{{ label }}</label>
+<input
+  type="text"
+  [placeholder]="placeholder"
+  (input)="onInputChange($event)"
+  [value]="value"
+/>
+<span *ngFor="let error of errorsArray">{{ error }}</span>

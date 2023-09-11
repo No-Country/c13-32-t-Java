@@ -1,0 +1,7 @@
+<label *ngIf="label">{{ label }}</label>
+<select [value]="value" (change)="onInputChange($event)">
+  <option *ngFor="let option of options" [value]="option.value">
+    {{ option.name }}
+  </option>
+  <span *ngFor="let error of errorsArray">{{ error }}</span>
+</select>

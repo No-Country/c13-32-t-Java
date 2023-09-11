@@ -1,0 +1,54 @@
+<form [formGroup]="form" class="form">
+  <shared-input-text
+    formControlName="firstName"
+    label="nombre"
+    placeholder="Fernando"
+    [errors]="getControlErrors('firstName')"
+  ></shared-input-text>
+  <shared-input-text
+    formControlName="lastName"
+    label="Apellido"
+    placeholder="Fernando"
+    [errors]="getControlErrors('lastName')"
+  ></shared-input-text>
+  <form formGroupName="bornDate" class="bornDate">
+    <label>Fecha de nacimiento</label>
+    <section>
+      <shared-select formControlName="day" [options]="days"></shared-select>
+      <shared-select formControlName="month" [options]="months"></shared-select>
+      <shared-select formControlName="year" [options]="years"></shared-select>
+    </section>
+  </form>
+  <form formGroupName="identify" class="identify">
+    <shared-select
+      formControlName="type"
+      [options]="indentifyTypes"
+    ></shared-select>
+    <shared-input-text
+      formControlName="value"
+      placeholder="Fernando"
+    ></shared-input-text>
+  </form>
+  <form formGroupName="location" class="location">
+    <shared-select
+      label="provincia"
+      formControlName="province"
+      [options]="indentifyTypes"
+    ></shared-select>
+    <shared-select
+      label="ciudad"
+      formControlName="city"
+      [options]="indentifyTypes"
+    ></shared-select>
+  </form>
+  <form formGroupName="termsAndConditions" class="termsAndConditions">
+    <shared-checkbox
+      formControlName="legalConditions"
+      label="Acepto el Uso del servicio y las Condiciones legales."
+    ></shared-checkbox>
+    <shared-checkbox
+      formControlName="sendingEmailsPolicy"
+      label="Acepto la Política de envío de emails"
+    ></shared-checkbox>
+  </form>
+</form>

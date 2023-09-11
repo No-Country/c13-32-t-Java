@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginFormComponent } from './components/auth/login-form/login-form.component';
@@ -21,10 +21,15 @@ import { DashboardEmployerComponent } from './components/pages/dashboard-employe
 import { NotFoundPageComponent } from './components/pages/not-found-page/not-found-page.component';
 import { DropDownWindowComponent } from './components/pages/drop-down-window/drop-down-window.component';
 import { NavBarEmployerLateralComponent } from './components/nav/nav-bar-employer-lateral/nav-bar-employer-lateral.component';
-import {NoticesComponent} from './components/pages/dashboard-employer/notices/notices.component'
+import { NoticesComponent } from './components/pages/dashboard-employer/notices/notices.component';
 import { PostulatesComponent } from './components/pages/dashboard-employer/postulates/postulates.component';
 import { NavBarEmployerTopComponent } from './components/nav/nav-bar-employer-top/nav-bar-employer-top.component';
 import { SearchEmployeesComponent } from './components/pages/dashboard-employer/search-employees/search-employees.component';
+import { PersonalInformationComponent } from './components/pages/personal-information/personal-information.component';
+import { InputTextComponent } from './shared/components/input-text/input-text.component';
+import { SelectComponent } from './shared/components/select/select.component';
+import { CheckboxComponent } from './shared/components/checkbox/checkbox.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -47,16 +52,22 @@ import { SearchEmployeesComponent } from './components/pages/dashboard-employer/
     PostulatesComponent,
     NavBarEmployerTopComponent,
     NoticesComponent,
-    SearchEmployeesComponent
+    SearchEmployeesComponent,
+    PersonalInformationComponent,
+    InputTextComponent,
+    SelectComponent,
+    CheckboxComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
     ModalModule.forRoot(),
   ],
   providers: [BsModalService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

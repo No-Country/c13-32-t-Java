@@ -1,0 +1,37 @@
+
+
+.form {
+    padding: 1rem;
+    background-color: #F7F9FB;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.bornDate{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.bornDate section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.identify{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+.location{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+.termsAndConditions{
+    display:flex;
+    flex-direction: column;
+    gap: 4px;
+}

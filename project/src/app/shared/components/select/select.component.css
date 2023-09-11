@@ -1,0 +1,24 @@
+:host{
+    display:flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin: 2px 0;
+}
+
+span{
+    color: brown;
+    font-size: 8pt;
+}
+
+select {
+    border: 1px solid #7C797A;
+    line-height: 0;
+    font-size: 17px;
+    width: auto;
+    padding: 10px 15px;
+    border-radius: 60px;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1
+}
