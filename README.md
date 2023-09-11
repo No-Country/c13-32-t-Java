@@ -13,6 +13,7 @@
 *[LENGUAJES Y FRAMEWORKS](#LENGUAJES-Y-FRAMEWORKS)
 <h3>PARA DISEÑOS EN BAJA Y ALTA RESOLUCIÓN: </h3>
  <h4>:heavy_check_mark: Figma</h4>
+  <h4>:heavy_check_mark: Illustrator</h4>
  <br>
 
   <br>
