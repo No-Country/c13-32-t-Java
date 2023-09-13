@@ -6,6 +6,7 @@ import {
   ValidationErrors,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { IselectOption } from 'src/app/shared/models/interfaces';
 
 @Component({
@@ -14,7 +15,11 @@ import { IselectOption } from 'src/app/shared/models/interfaces';
   styleUrls: ['./personal-information.component.css'],
 })
 export class PersonalInformationComponent {
+  constructor(private router: Router) {}
+
   form: FormGroup = new FormGroup({
+    email: this.textInput(),
+    password: this.textInput(),
     firstName: this.textInput(),
     lastName: this.textInput(),
     bornDate: new FormGroup({
@@ -63,11 +68,15 @@ export class PersonalInformationComponent {
     { name: 'Cédula extranjera', value: 'CE' },
   ];
 
-  textInput(defaultValue?: string | null): FormControl {
+  private textInput(defaultValue?: string | null): FormControl {
     return new FormControl(defaultValue || '', [Validators.required]);
   }
 
   getControlErrors(controlName: string): ValidationErrors {
     return this.form?.get(controlName)?.errors || {};
+  }
+
+  createAccount(): void {
+    this.router.navigateByUrl('/dashboard-employee');
   }
 }

@@ -30,6 +30,10 @@ import { InputTextComponent } from './shared/components/input-text/input-text.co
 import { SelectComponent } from './shared/components/select/select.component';
 import { CheckboxComponent } from './shared/components/checkbox/checkbox.component';
 import { RouterModule } from '@angular/router';
+import { ButtonComponent } from './shared/components/button/button.component';
+import { PublishEmployeeComponent } from './components/pages/publish-employee/publish-employee.component';
+import { DesktopPageComponent } from './components/pages/desktop-page/desktop-page.component';
+import { BriefJobOfferComponent } from './shared/components/brief-job-offer/brief-job-offer.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +61,10 @@ import { RouterModule } from '@angular/router';
     InputTextComponent,
     SelectComponent,
     CheckboxComponent,
+    ButtonComponent,
+    PublishEmployeeComponent,
+    DesktopPageComponent,
+    BriefJobOfferComponent,
   ],
   imports: [
     BrowserModule,

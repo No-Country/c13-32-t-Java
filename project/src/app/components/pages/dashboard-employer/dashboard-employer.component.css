@@ -7,7 +7,8 @@
 .content{
     width: 92%;
     height: 100%;
-    background-color: rgb(212, 232, 250);
+    background-color: rgb(235, 242, 248);
+    overflow: auto;
 }
 
 

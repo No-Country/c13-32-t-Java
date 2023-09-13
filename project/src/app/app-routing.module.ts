@@ -8,16 +8,17 @@ import { NoticesComponent } from './components/pages/dashboard-employer/notices/
 import { PostulatesComponent } from './components/pages/dashboard-employer/postulates/postulates.component';
 import { SearchEmployeesComponent } from './components/pages/dashboard-employer/search-employees/search-employees.component';
 import { PersonalInformationComponent } from './components/pages/personal-information/personal-information.component';
+import { DesktopPageComponent } from './components/pages/desktop-page/desktop-page.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomePageComponent },
-  { path: 'Dashboard-Employer', component: DashboardEmployerComponent },
+  { path: 'dashboard-employee', component: DashboardEmployerComponent },
   { path: 'notices', component: NoticesComponent },
   { path: 'postulates', component: PostulatesComponent },
   { path: 'search-employees', component: SearchEmployeesComponent },
   {
-    path: 'datos-personales',
+    path: 'personal-informmation',
     component: PersonalInformationComponent,
   },
   { path: '**', component: NotFoundPageComponent },

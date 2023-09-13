@@ -1,0 +1,24 @@
+<form [formGroup]="form" class="form">
+  <shared-select
+    label="Industria"
+    formControlName="industry"
+    [options]="industries"
+  ></shared-select>
+  <shared-select
+    label="Cantidad de Sucursales"
+    formControlName="branchOffices"
+    [options]="ranges"
+  ></shared-select>
+  <shared-select
+    label="Cantidad de Empleados"
+    formControlName="employees"
+    [options]="ranges"
+  ></shared-select>
+  <shared-input-text
+    label="Descripción de la Empresa"
+    type="textarea"
+    formControlName="companyDescription"
+    [errors]="getControlErrors('companyDescription')"
+  ></shared-input-text>
+</form>
+<shared-button name="Crear Cuenta" (emitClick)="createOffer()"></shared-button>

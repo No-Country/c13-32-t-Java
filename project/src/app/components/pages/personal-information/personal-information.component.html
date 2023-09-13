@@ -1,5 +1,17 @@
 <form [formGroup]="form" class="form">
   <shared-input-text
+    formControlName="email"
+    label="correo"
+    placeholder="Fernando@correo.c.."
+    [errors]="getControlErrors('email')"
+  ></shared-input-text>
+  <shared-input-text
+    formControlName="password"
+    label="Contraseña"
+    placeholder="Escribe la contraseña aquí"
+    [errors]="getControlErrors('password')"
+  ></shared-input-text>
+  <shared-input-text
     formControlName="firstName"
     label="nombre"
     placeholder="Fernando"
@@ -26,20 +38,20 @@
     ></shared-select>
     <shared-input-text
       formControlName="value"
-      placeholder="Fernando"
+      placeholder="100800..."
     ></shared-input-text>
   </form>
   <form formGroupName="location" class="location">
-    <shared-select
-      label="provincia"
+    <shared-input-text
       formControlName="province"
-      [options]="indentifyTypes"
-    ></shared-select>
-    <shared-select
-      label="ciudad"
+      label="Provincia"
+      placeholder="Suba"
+    ></shared-input-text>
+    <shared-input-text
       formControlName="city"
-      [options]="indentifyTypes"
-    ></shared-select>
+      label="Ciudad"
+      placeholder="Bogotá"
+    ></shared-input-text>
   </form>
   <form formGroupName="termsAndConditions" class="termsAndConditions">
     <shared-checkbox
@@ -52,3 +64,7 @@
     ></shared-checkbox>
   </form>
 </form>
+<shared-button
+  name="Crear Cuenta"
+  (emitClick)="createAccount()"
+></shared-button>
