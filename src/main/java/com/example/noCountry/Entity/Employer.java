@@ -83,14 +83,6 @@ public class Employer extends User{
     public void setMyPublication(Collection<Publication> myPublication) {
         this.myPublication = myPublication;
     }
-    
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
 
     public String getEnterpriseName() {
         return enterpriseName;

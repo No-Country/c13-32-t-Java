@@ -1,5 +1,6 @@
 package com.example.noCountry.controllers;
 
+import com.example.noCountry.DTO.UserDTO;
 import com.example.noCountry.Entity.User;
 import com.example.noCountry.Services.UserService;
 import java.util.List;
@@ -28,13 +29,17 @@ public class UserController {
     
     //add user
     @PostMapping("/create")
-    public ResponseEntity<String> addUser(@RequestBody User user){
-        User createdUser = userService.createUser(user.getEmail(), user.getPassword(), user.getRole());
-        if (createdUser != null) {
-            return ResponseEntity.ok("Usuario creado");
-        } else {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al crear el usuario");
+    public ResponseEntity<String> addUser(@RequestBody UserDTO user){
+        try {
+            if (userService.createUser(user)) {
+                return ResponseEntity.ok("Usuario creado");
+            } else {
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al crear el usuario");
+            }
+        } catch (Exception e){
+            return new ResponseEntity("Ocurrio un error inesperado, contacte con el administrador", HttpStatus.BAD_REQUEST);
         }
+        
     }
 
 

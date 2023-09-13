@@ -46,7 +46,8 @@ public class User implements UserDetails {
         this.country = country;
     }
 
-    public User(String email, String password, String firstname, String lastname, Integer contactNum, Role role, Location location, String country) {
+    public User(String email, String password, String firstname, String lastname,
+            Integer contactNum, Role role, Location location, String country) {
         this.email = email;
         this.password = password;
         this.firstname = firstname;
