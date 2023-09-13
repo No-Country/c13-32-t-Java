@@ -1,0 +1,16 @@
+
+.modal-header{
+    display: flex;
+    align-items: center;
+    border: none;
+}
+.modal-title{
+    text-align: center;
+    width: 100%;
+    color: black;
+}
+.close{
+    background-color: transparent;
+    border: none !important ;
+    transform: scale(2);
+}

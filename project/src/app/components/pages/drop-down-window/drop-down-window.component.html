@@ -1,0 +1,31 @@
+<div class="dropdown-container" [ngClass]="{'show-dropdown': isDropdownOpen}">
+    <!-- Contenido de la ventana desplegable -->
+    <div class="dropdown-content" *ngIf="isDropdownOpen">
+        <div class="contenedores">
+            <img src="../../../../assets/user.svg" alt="">
+            <p>Mi perfil</p>
+
+        </div>
+        <div class="contenedores">
+            <img src="../../../../assets/setting.svg" alt="">
+            <p>Configuración de cuenta</p>
+
+        </div>
+        <div class="contenedores">
+            <img src="../../../../assets/message.svg" alt="">
+            <p>Mensajes</p>
+
+        </div>
+        <div class="contenedores">
+            <img src="../../../../assets/help.svg" alt="">
+            <p>Centro de Ayuda</p>
+
+        </div>
+        <div class="contenedores">
+            <img src="../../../../assets/exit.svg" alt="">
+            <a routerLink="/home" routerLinkActive="activo" class="activo">Cerrar sesion</a>
+
+        </div>
+    </div>
+    
+</div>
