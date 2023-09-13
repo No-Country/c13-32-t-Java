@@ -53,6 +53,10 @@
       placeholder="Bogotá"
     ></shared-input-text>
   </form>
+  <shared-input-text
+    formControlName="phone"
+    label="Teléfono"
+  ></shared-input-text>
   <form formGroupName="termsAndConditions" class="termsAndConditions">
     <shared-checkbox
       formControlName="legalConditions"
@@ -66,5 +70,6 @@
 </form>
 <shared-button
   name="Crear Cuenta"
+  [disabled]="form.invalid"
   (emitClick)="createAccount()"
 ></shared-button>

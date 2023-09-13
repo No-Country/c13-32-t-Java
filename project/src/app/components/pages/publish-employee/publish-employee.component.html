@@ -21,4 +21,8 @@
     [errors]="getControlErrors('companyDescription')"
   ></shared-input-text>
 </form>
-<shared-button name="Crear Cuenta" (emitClick)="createOffer()"></shared-button>
+<shared-button
+  name="Crear Cuenta"
+  [disabled]="form.invalid"
+  (emitClick)="createOffer()"
+></shared-button>

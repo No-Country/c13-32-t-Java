@@ -26,3 +26,18 @@ button:hover{
     background-color: #084656;
     color: white;
 }
+
+.disabled{
+    cursor: default;
+    border: solid #414e52;
+    background-color: #c6cdcf;
+    color: #424d50;
+}
+
+.disabled:hover{
+    cursor: default;
+    border: solid #084656;
+    background-color: #c6cdcf;
+    color: #084656;
+
+}
