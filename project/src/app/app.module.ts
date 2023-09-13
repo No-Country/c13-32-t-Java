@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -35,7 +36,6 @@ import { PublishEmployeeComponent } from './components/pages/publish-employee/pu
 import { DesktopPageComponent } from './components/pages/desktop-page/desktop-page.component';
 import { BriefJobOfferComponent } from './shared/components/brief-job-offer/brief-job-offer.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,6 +69,7 @@ import { BriefJobOfferComponent } from './shared/components/brief-job-offer/brie
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,

@@ -29,7 +29,7 @@ public class NoCountryApplication {
 	}
 
 	@Bean
-	public PasswordEncoder passwordEncoder() {
+	public PasswordEncoder myPasswordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 }

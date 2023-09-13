@@ -4,8 +4,10 @@ import com.example.noCountry.Entity.User;
 import java.util.List;
 
 import com.example.noCountry.Jwt.AuthResponse;
+import com.example.noCountry.Jwt.UserRegistrationRequest;
 import com.example.noCountry.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,8 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-
+/*
     @Autowired
+    @Lazy
     private UserService userService;
 
     
@@ -27,11 +30,10 @@ public class UserController {
         List<User> responseList = userService.viewAll();
         return new ResponseEntity(responseList, HttpStatus.OK);
     }
-    
-    //add user
+
     @PostMapping("/create")
-    public ResponseEntity<String> addUser(@RequestBody User user) {
-        AuthResponse authResponse = userService.createUser(user.getEmail(), user.getPassword(), user.getRole());
+    public ResponseEntity<String> addUser(@RequestBody UserRegistrationRequest request) {
+        AuthResponse authResponse = userService.createUser(request);
 
         if (authResponse != null && authResponse.getToken() != null) {
             return ResponseEntity.ok("Usuario creado");
@@ -39,6 +41,7 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al crear el usuario");
         }
     }
+*/
 
 
 }

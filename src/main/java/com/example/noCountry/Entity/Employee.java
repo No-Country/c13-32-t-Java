@@ -18,21 +18,4 @@ public class Employee extends User {
     )
     private Collection<Publication> postulations;
 
-
-    @Column(name = "date")
-    private Date date;
-
-    @Enumerated(EnumType.STRING)
-    private TipoId tipoId;
-
-    @ManyToOne // Muchos empleados pertenecen a una provincia
-    @JoinColumn(name = "provincia_id")
-    private Provincia provincia;
-
-    @ManyToOne // Muchos empleados pertenecen a una ciudad
-    @JoinColumn(name = "ciudad_id")
-    private Ciudad ciudad;
-
-
-
 }

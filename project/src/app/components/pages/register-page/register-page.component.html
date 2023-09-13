@@ -1,9 +1,13 @@
 
 <div class="registro-container">
-  <h2>Crea tu cuenta</h2>
-  <button (click)="toggleForm()">Regístrate con un correo electrónico</button>
-  <div [@slideDown]="formState">
-    <app-form *ngIf="formState === 'visible'"></app-form>
-  </div>
+    <h2>Crea tu cuenta</h2>
+    <button (click)="toggleForm()">Regístrate con un correo electrónico</button>
+    <div [@slideDown]="formState">
+        <app-form *ngIf="formState === 'visible'"></app-form>
+
+    </div>
+    <button id="redes" (click)="registrar()">Registrate con google</button>
+    <button id="redes" (click)="registrar()">Registrate con facebook</button>
+
 </div>
 

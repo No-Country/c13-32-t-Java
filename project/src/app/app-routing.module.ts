@@ -10,6 +10,7 @@ import { SearchEmployeesComponent } from './components/pages/dashboard-employer/
 import { PersonalInformationComponent } from './components/pages/personal-information/personal-information.component';
 import { DesktopPageComponent } from './components/pages/desktop-page/desktop-page.component';
 
+
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomePageComponent },
