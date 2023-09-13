@@ -20,7 +20,9 @@ import {
 export class InputTextComponent implements ControlValueAccessor {
   @Input() label!: string;
   @Input() placeholder: string = '';
+  @Input() type: 'text' | 'textarea' = 'text';
   @Input() errors!: ValidationErrors;
+  isMandary: '' | '*' = '';
   value!: string;
   onChangeFn!: Function;
 

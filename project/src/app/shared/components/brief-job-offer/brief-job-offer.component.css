@@ -1,0 +1,43 @@
+:host{
+    border: 1px #000 solid;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    font-family: 'poppins';
+    background-color: white;
+    width: 360px;
+}
+
+.information{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+img{
+    width: 1rem;
+}
+
+#favorite{
+    width: 2rem;
+    filter: contrast(0.5) sepia(12) saturate(11.5);
+}
+
+section.date-and-seen {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+h4{
+    margin: 0;
+}

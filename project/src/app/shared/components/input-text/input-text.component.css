@@ -3,10 +3,12 @@
     flex-direction: column;
     gap: 2px;
     margin: 2px 0;
+    font-family: 'Poppins';
 }
 
 label{
     margin-bottom: 4px;
+    text-transform: capitalize;
 }
 
 span{
