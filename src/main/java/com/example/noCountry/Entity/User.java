@@ -17,12 +17,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Data
 @Builder
 @AllArgsConstructor
-@Table(name = "user", uniqueConstraints = {@UniqueConstraint(columnNames = {"userName"})})
+//@Table(name = "user", uniqueConstraints = {@UniqueConstraint(columnNames = {"userName"})})
 public class User implements UserDetails {
     @Id
     @GeneratedValue(generator = "uuid")
     private UUID id;
-    @Column(nullable = false)
+    @Column
     private String userName;
 
     private String password;
@@ -132,18 +132,19 @@ public class User implements UserDetails {
         this.id = id;
     }
 
-    @Override
-    public String getUsername() {
-        return userName;
-    }
 
-    public void setUsername(String email) {
+    public void setuserName(String userName) {
         this.userName = userName;
     }
 
     @Override
     public String getPassword() {
         return password;
+    }
+
+    @Override
+    public String getUsername() {
+        return null;
     }
 
     public void setPassword(String password) {

@@ -13,5 +13,4 @@ public interface UserRepository extends JpaRepository<User, UUID> {
 
     Optional<User> findByUserName(String userName); //usado para jwt
 
-    //boolean existsByEmail(String email);
 }

@@ -21,8 +21,22 @@ public class SecurityConfig {
     private final JwtAuthFilter jwtAuthFilter;
     private final AuthenticationProvider authenticationProvider;
 
-
     @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
+
+        http.csrf(
+                (csrf) -> csrf
+                        .disable()
+        );
+
+        http.authorizeHttpRequests(
+                (authz) -> authz
+                        .anyRequest().permitAll()
+        );
+
+        return http.build();
+    }
+   /* @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
                 .csrf(AbstractHttpConfigurer::disable)
@@ -37,10 +51,9 @@ public class SecurityConfig {
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthFilter,  UsernamePasswordAuthenticationFilter.class)
                 .build();
-        }
+        }*/
 
 }
-
 
    /*
 

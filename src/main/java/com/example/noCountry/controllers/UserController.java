@@ -19,29 +19,27 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-/*
+
+
     @Autowired
-    @Lazy
     private UserService userService;
 
-    
+
     @GetMapping()
-    public ResponseEntity<?> viewAllUser(){
+    public ResponseEntity<?> viewAllUser() {
         List<User> responseList = userService.viewAll();
         return new ResponseEntity(responseList, HttpStatus.OK);
     }
 
+    //add user
     @PostMapping("/create")
-    public ResponseEntity<String> addUser(@RequestBody UserRegistrationRequest request) {
-        AuthResponse authResponse = userService.createUser(request);
-
-        if (authResponse != null && authResponse.getToken() != null) {
+    public ResponseEntity<String> addUser(@RequestBody User user) {
+        User createdUser = userService.createUser(user.getUsername(), user.getPassword());
+        if (createdUser != null) {
             return ResponseEntity.ok("Usuario creado");
         } else {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al crear el usuario");
         }
+
     }
-*/
-
-
 }
