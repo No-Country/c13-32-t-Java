@@ -35,6 +35,7 @@ import { ButtonComponent } from './shared/components/button/button.component';
 import { PublishEmployeeComponent } from './components/pages/publish-employee/publish-employee.component';
 import { DesktopPageComponent } from './components/pages/desktop-page/desktop-page.component';
 import { BriefJobOfferComponent } from './shared/components/brief-job-offer/brief-job-offer.component';
+import { PersonalInfoService } from './components/pages/personal-information/personal-information.service';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,7 @@ import { BriefJobOfferComponent } from './shared/components/brief-job-offer/brie
     RouterModule,
     ModalModule.forRoot(),
   ],
-  providers: [BsModalService],
+  providers: [BsModalService, PersonalInfoService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,4 +1,4 @@
-<form [formGroup]="form"  class="form">
+<form [formGroup]="form" class="form">
   <shared-input-text
     formControlName="userName"
     label="correo"
@@ -71,4 +71,5 @@
 <shared-button
   name="Crear Cuenta"
   (emitClick)="addUser()"
+  [disabled]="form.invalid"
 ></shared-button>
