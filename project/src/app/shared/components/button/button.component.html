@@ -1,0 +1,8 @@
+<button
+  *ngIf="name"
+  (click)="emitClick.emit()"
+  [disabled]="disabled"
+  [ngClass]="{ disabled: disabled }"
+>
+  {{ name }}
+</button>

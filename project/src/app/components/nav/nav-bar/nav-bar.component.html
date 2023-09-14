@@ -1,0 +1,29 @@
+<nav class="nav">
+  <div class="nav-logo">
+    <a routerLink="/home" routerLinkActive="activo" class="activo"
+      ><img src="../../../../assets/logo.svg" alt=""
+    /></a>
+  </div>
+  <div class="nav-center">
+    <div class="item">
+      <a routerLink="/Dashboard-Employer" routerLinkActive="activo"
+        >Sobre Nosotros</a
+      >
+    </div>
+    <div class="item"><a href="#">Blog</a></div>
+  </div>
+  <div class="nav-right">
+    <shared-button
+      name="Publicar Empleo"
+      (emitClick)="openRegisterModal()"
+    ></shared-button>
+    <shared-button
+      name="Crear Cuenta"
+      (emitClick)="openCreateCountModal()"
+    ></shared-button>
+    <shared-button
+      name="Ingresar"
+      (emitClick)="openLoginModal()"
+    ></shared-button>
+  </div>
+</nav>

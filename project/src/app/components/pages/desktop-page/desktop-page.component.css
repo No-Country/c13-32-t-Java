@@ -1,0 +1,49 @@
+
+
+:host{
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+.titulo{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.titulo h4 {
+    margin: 0;
+}
+.borde-redondeado{
+    border: 1px #000 solid;
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.seccion-inicial {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}   
+
+.ultimas-postulaciones {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.contenedor-postulaciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.scroll-interno{
+    height: 200px;
+    overflow: auto;
+}
