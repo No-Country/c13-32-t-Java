@@ -8,7 +8,8 @@ import { PersonalInfoService } from './personal-information.service';
 
 export class UserComponent implements OnInit {
 
-  user: User[] | undefined;
+  user: User[] = [];
+
 
   constructor(private personalInfoService: PersonalInfoService) { }
 
@@ -24,7 +25,7 @@ export class UserComponent implements OnInit {
     };
 
     // Llamar a crearUsers para agregar el nuevo usuario
-    await this.personalInfoService.crearUsers(newUser);
+    await this.personalInfoService.addUser(newUser);
 
     // Obtener la lista actualizada de usuarios
     this.user = await this.personalInfoService.obtenerUsers();

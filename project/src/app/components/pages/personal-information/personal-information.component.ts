@@ -8,6 +8,8 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IselectOption } from 'src/app/shared/models/interfaces';
+import {PersonalInfoService} from './personal-information.service';
+import { User } from './User';
 
 @Component({
   selector: 'app-personal-information',
@@ -15,10 +17,12 @@ import { IselectOption } from 'src/app/shared/models/interfaces';
   styleUrls: ['./personal-information.component.css'],
 })
 export class PersonalInformationComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private personalInfoService: PersonalInfoService) {
+   
+  }
 
   form: FormGroup = new FormGroup({
-    email: this.textInput(),
+    userName: this.textInput(),
     password: this.textInput(),
     firstName: this.textInput(),
     lastName: this.textInput(),
@@ -66,6 +70,9 @@ export class PersonalInformationComponent {
   indentifyTypes: IselectOption[] = [
     { name: 'Cédula de ciudadania', value: 'CC' },
     { name: 'Cédula extranjera', value: 'CE' },
+    { name: 'DNI', value: 'DNI' },
+    { name: 'pasaporte', value: 'Pasaporte' },
+    { name: 'CUIT', value: 'CUIT' },
   ];
 
   private textInput(defaultValue?: string | null): FormControl {
@@ -76,7 +83,12 @@ export class PersonalInformationComponent {
     return this.form?.get(controlName)?.errors || {};
   }
 
-  createAccount(): void {
+  addUser(): void {
     this.router.navigateByUrl('/dashboard-employee');
+    const {
+      userName, password 
+    }
+    = this.form.getRawValue();
+    this.personalInfoService.addUser({userName, password });
   }
 }

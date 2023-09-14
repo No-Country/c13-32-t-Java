@@ -4,6 +4,7 @@ import com.example.noCountry.Entity.User;
 import java.util.List;
 
 import com.example.noCountry.Jwt.AuthResponse;
+import com.example.noCountry.Jwt.LoginRequest;
 import com.example.noCountry.Jwt.UserRegistrationRequest;
 import com.example.noCountry.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,22 @@ public class UserController {
         } else {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al crear el usuario");
         }
+    }
+    @PostMapping("/loginUser")
+    public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
+        try {
+            User user = userService.findByUserName(loginRequest.getUsername());
 
+            if (user == null) {
+                throw new RuntimeException("El correo electrónico no ha sido verificado.");
+            }
+
+            return ResponseEntity.ok("Inicio de sesión exitoso");
+        } catch (RuntimeException e) {
+
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
+        }
     }
 }
+
+

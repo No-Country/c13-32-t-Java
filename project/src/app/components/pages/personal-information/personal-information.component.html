@@ -1,9 +1,9 @@
-<form [formGroup]="form" class="form">
+<form [formGroup]="form"  class="form">
   <shared-input-text
-    formControlName="email"
+    formControlName="userName"
     label="correo"
     placeholder="Fernando@correo.c.."
-    [errors]="getControlErrors('email')"
+    [errors]="getControlErrors('userName')"
   ></shared-input-text>
   <shared-input-text
     formControlName="password"
@@ -70,6 +70,5 @@
 </form>
 <shared-button
   name="Crear Cuenta"
-  [disabled]="form.invalid"
-  (emitClick)="createAccount()"
+  (emitClick)="addUser()"
 ></shared-button>

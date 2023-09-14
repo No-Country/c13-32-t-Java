@@ -1,12 +1,13 @@
 import { HttpClientModule } from '@angular/common/http';
 import {User} from './User';
-import { BehaviorSubject, Observable, of, lastValueFrom } from "rxjs";
+import { BehaviorSubject, lastValueFrom } from "rxjs";
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { map } from "rxjs";
 import { Injectable } from '@angular/core';
 
 @Injectable()
 export class PersonalInfoService{
+  
 
     private urlEndPoint: string = 'http://localhost:8080/user';
     
@@ -22,19 +23,16 @@ export class PersonalInfoService{
     }
 
     //CREAR USUARIO
-    async crearUsers(newUser: User) {
+    async addUser(newUser: User) {
 // Verificar que los campos no estén en blanco o sean nulos
 if (!newUser.userName|| !newUser.password) {
     throw new Error("Todos los campos son obligatorios");
   }
 
-  // Aquí puedes agregar otras validaciones específicas según tus requisitos
-
   return lastValueFrom(
     this.http.post<User[]>(this.urlEndPoint + '/create', newUser).pipe(
       map((response) => response)
-    )
-  );
+    ));
       }
 
     //OBTENER USUARIOS

@@ -9,6 +9,7 @@ import com.example.noCountry.Repository.UserRepository;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,14 @@ public class UserService {
 
 
         return userRepository.save(user);
+    }
+
+    public User findByUserName(String username) {
+        Optional<User> encontrarUser = userRepository.findByUserName(username);
+        if (encontrarUser.isEmpty()) {
+            throw new RuntimeException("No se encontró usuario con ese correo registrado, intente nuevamente");
+        }
+        return encontrarUser.get();
     }
 }
 
