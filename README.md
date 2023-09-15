@@ -49,7 +49,7 @@
 
 *[DESARROLLADORES DEL PROYECTO](#DESARROLLADORES-DEL-PROYECTO)
 
-<h3>:art:Gertrudis Toncón</h3>
+<h3>:art:Gertrudis Troncone</h3>
 <h3>:art:Daiana Julieta Garibotto</h3>
 <h3>:computer:Pablo Calderón</h3>
 <h3>:computer:Facundo Pinazo</h3>
