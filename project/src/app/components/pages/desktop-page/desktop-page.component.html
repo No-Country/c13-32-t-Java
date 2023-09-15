@@ -1,0 +1,41 @@
+<section class="seccion-inicial">
+  <div class="resumen">
+    <h3>Bienvenido, nombre</h3>
+    <div class="borde-redondeado">
+      <h2><strong>Nombre</strong></h2>
+      <section class="titulo">
+        <img src="../../../../assets/maletin.svg" alt="company" />
+        <h4>
+          <strong>Cargo</strong>
+        </h4>
+      </section>
+      <shared-button name="Acceder al CV" (emitClick)="getCV()"></shared-button>
+    </div>
+  </div>
+  <section class="contenedor-postulaciones scroll-interno">
+    <shared-brief-job-offer
+      *ngFor="let offer of recommendations"
+      [offer]="offer"
+    ></shared-brief-job-offer>
+  </section>
+</section>
+<section class="ultimas-postulaciones">
+  <div>
+    <h3>Mis Ultimas Postulaciones</h3>
+    <section class="contenedor-postulaciones">
+      <shared-brief-job-offer
+        *ngFor="let offer of applications"
+        [offer]="offer"
+      ></shared-brief-job-offer>
+    </section>
+  </div>
+  <div>
+    <h3>Mis favoritos</h3>
+    <section class="contenedor-postulaciones">
+      <shared-brief-job-offer
+        *ngFor="let offer of favorites"
+        [offer]="offer"
+      ></shared-brief-job-offer>
+    </section>
+  </div>
+</section>

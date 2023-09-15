@@ -1,0 +1,30 @@
+.nav-lateral{
+    width: 112px;
+    height: 100%;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-lateral-content{
+    height: 55%;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+.item{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 31px;
+}
+.item a{
+    color: white;
+    text-decoration: none;
+    
+}

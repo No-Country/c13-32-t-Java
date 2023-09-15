@@ -1,0 +1,25 @@
+<section class="information">
+  <section class="title">
+    <img src="../../../../assets/maletin.svg" alt="company" />
+    <h4>
+      <strong>{{ offer.title }}</strong>
+    </h4>
+  </section>
+  <span>{{ offer.company }}</span>
+  <section class="date-and-seen">
+    <div>
+      <img src="../../../../assets/reloj.svg" alt="date" />
+      <span>{{ offer.date }}</span>
+    </div>
+    <div *ngIf="offer.seen">
+      <img src="../../../../assets/eye.svg" alt="seen" />
+      <span>CV leido</span>
+    </div>
+  </section>
+</section>
+<img
+  *ngIf="offer.isFavorite"
+  id="favorite"
+  src="../../../../assets/heart-solid.svg"
+  alt="favorite"
+/>

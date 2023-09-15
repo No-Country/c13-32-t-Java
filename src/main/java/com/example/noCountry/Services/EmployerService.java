@@ -59,7 +59,7 @@ public class EmployerService {
         if (employerDTO.getCuit() == null){
             return false;
         }
-        if (employerDTO.getEmail() == null || employerRepo.findByEmail(employerDTO.getEmail()).isPresent()){
+        if (employerDTO.getEmail() == null || employerRepo.findByUsername(employerDTO.getEmail()).isPresent()){
             return false;
         }
         if (employerDTO.getEnterpriseName() == null){

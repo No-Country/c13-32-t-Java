@@ -1,42 +1,35 @@
 package com.example.noCountry.Services;
 
-import com.example.noCountry.DTO.PublicationDTO;
+import com.example.noCountry.Config.SecurityConfig;
 import com.example.noCountry.DTO.UserDTO;
+import com.example.noCountry.Entity.AuthoritiesRoles;
 import com.example.noCountry.Entity.User;
-import com.example.noCountry.Entity.Role;
 import com.example.noCountry.Repository.UserRepository;
 import java.lang.reflect.Field;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Service
-public class UserService {
+public class UserService implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;
-
+    
     @Autowired
-    private PasswordEncoder passwordEncoder;
+    private SecurityConfig securityConfig;
 
     public List<User> viewAll(){
         return userRepository.findAll();
     }
-
-    public boolean createUser(UserDTO userDTO) throws Exception {
-        if (userRepository.findByEmail(userDTO.getEmail()).isPresent()){
-            return false;
-        }
-        User newUser = initializateUser(userDTO);
-        if (newUser == null){
-            return false;
-        }
-        userRepository.save(newUser);
-        return true;
-    }
-    
-    
     
     public boolean validateFields(UserDTO validateUser) throws IllegalArgumentException, Exception{
         
@@ -71,5 +64,13 @@ public class UserService {
             return newUser;
         }
         return null;
+    }
+
+    
+    
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        
+        return userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("username not found"));
     }
 }

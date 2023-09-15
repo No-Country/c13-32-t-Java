@@ -5,10 +5,16 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -20,9 +26,17 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(generator = "uuid")
     private UUID id;
-    @Column
-    private String email;
+    @Column(unique = true)
+    private String username;
     private String password;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "user_role",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
+    )
+    private Set<AuthoritiesRoles> authorities;
+    
     private String firstname;
     private String lastname;
     private Integer contactNum;
@@ -32,11 +46,13 @@ public class User implements UserDetails {
     private String country; 
 
     public User() {
+        super();
+        this.authorities = new HashSet<AuthoritiesRoles>();
     }
 
-    public User(UUID id, String email, String password, String firstname, String lastname, Integer contactNum, Role role, Location location, String country) {
+    public User(UUID id, String username, String password, String firstname, String lastname, Integer contactNum, Role role, Location location, String country) {
         this.id = id;
-        this.email = email;
+        this.username = username;
         this.password = password;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -46,9 +62,17 @@ public class User implements UserDetails {
         this.country = country;
     }
 
-    public User(String email, String password, String firstname, String lastname,
+    public User(String username, String password, Set<AuthoritiesRoles> authorities) {
+        this.username = username;
+        this.password = password;
+        this.authorities = authorities;
+    }
+    
+    
+
+    public User(String username, String password, String firstname, String lastname,
             Integer contactNum, Role role, Location location, String country) {
-        this.email = email;
+        this.username = username;
         this.password = password;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -110,11 +134,11 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
-        return email;
+        return username;
     }
 
-    public void setUsername(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
     
     @Override
@@ -136,9 +160,13 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(role.name()));
+        return this.authorities;
     }
-
+    
+    public void setAuthorities(Set<AuthoritiesRoles> authorities){
+        this.authorities = authorities;
+    }
+    
     @Override
     public boolean isAccountNonExpired() {
         return true;

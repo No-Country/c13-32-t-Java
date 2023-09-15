@@ -1,0 +1,75 @@
+<form [formGroup]="form" class="form">
+  <shared-input-text
+    formControlName="userName"
+    label="correo"
+    placeholder="Fernando@correo.c.."
+    [errors]="getControlErrors('userName')"
+  ></shared-input-text>
+  <shared-input-text
+    formControlName="password"
+    label="Contraseña"
+    placeholder="Escribe la contraseña aquí"
+    [errors]="getControlErrors('password')"
+  ></shared-input-text>
+  <shared-input-text
+    formControlName="firstName"
+    label="nombre"
+    placeholder="Fernando"
+    [errors]="getControlErrors('firstName')"
+  ></shared-input-text>
+  <shared-input-text
+    formControlName="lastName"
+    label="Apellido"
+    placeholder="Fernando"
+    [errors]="getControlErrors('lastName')"
+  ></shared-input-text>
+  <form formGroupName="bornDate" class="bornDate">
+    <label>Fecha de nacimiento</label>
+    <section>
+      <shared-select formControlName="day" [options]="days"></shared-select>
+      <shared-select formControlName="month" [options]="months"></shared-select>
+      <shared-select formControlName="year" [options]="years"></shared-select>
+    </section>
+  </form>
+  <form formGroupName="identify" class="identify">
+    <shared-select
+      formControlName="type"
+      [options]="indentifyTypes"
+    ></shared-select>
+    <shared-input-text
+      formControlName="value"
+      placeholder="100800..."
+    ></shared-input-text>
+  </form>
+  <form formGroupName="location" class="location">
+    <shared-input-text
+      formControlName="province"
+      label="Provincia"
+      placeholder="Suba"
+    ></shared-input-text>
+    <shared-input-text
+      formControlName="city"
+      label="Ciudad"
+      placeholder="Bogotá"
+    ></shared-input-text>
+  </form>
+  <shared-input-text
+    formControlName="phone"
+    label="Teléfono"
+  ></shared-input-text>
+  <form formGroupName="termsAndConditions" class="termsAndConditions">
+    <shared-checkbox
+      formControlName="legalConditions"
+      label="Acepto el Uso del servicio y las Condiciones legales."
+    ></shared-checkbox>
+    <shared-checkbox
+      formControlName="sendingEmailsPolicy"
+      label="Acepto la Política de envío de emails"
+    ></shared-checkbox>
+  </form>
+</form>
+<shared-button
+  name="Crear Cuenta"
+  (emitClick)="addUser()"
+  [disabled]="form.invalid"
+></shared-button>

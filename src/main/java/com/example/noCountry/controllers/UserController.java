@@ -27,20 +27,6 @@ public class UserController {
         return new ResponseEntity(responseList, HttpStatus.OK);
     }
     
-    //add user
-    @PostMapping("/create")
-    public ResponseEntity<String> addUser(@RequestBody UserDTO user){
-        try {
-            if (userService.createUser(user)) {
-                return ResponseEntity.ok("Usuario creado");
-            } else {
-                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al crear el usuario");
-            }
-        } catch (Exception e){
-            return new ResponseEntity("Ocurrio un error inesperado, contacte con el administrador", HttpStatus.BAD_REQUEST);
-        }
-        
-    }
 
 
 
