@@ -1,0 +1,30 @@
+<!-- Montamos el Login Form haciendo uso de componentes Material -->
+<div class="login-container">
+  <h2>Iniciar Sesión</h2>
+  <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+    <div class="form-group">
+      <input label="" matInput placeholder="Email" formControlName="email" />
+      <div class="error" *ngIf="email?.hasError('required') && email?.touched">
+        El campo email es obligatorio
+      </div>
+      <div class="error" *ngIf="email?.hasError('email') && email?.touched">
+        El formato email no es correcto
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="password" id="password" placeholder="Contraseña" name="password" formControlName="password" required>
+      <div class="error" *ngIf="password?.hasError('required') && password?.touched">
+        El campo contraseña es obligatorio
+      </div>
+    </div>
+    <a href="">¿Olvidaste tu contraseña?</a>
+    <button type="submit" [disabled]="!loginForm.valid">Iniciar Sesión</button>
+  </form>
+  
+  <button ><img src="../../../../assets/google-icon.svg" alt=""><p>Iniciar con Google</p></button>
+  <button ><img src="../../../../assets/facebook.svg" alt=""><p>Iniciar con Facebook</p></button>
+  <a href="">No tengo cuenta, quiero registrarme</a>
+</div>
+
+
+  

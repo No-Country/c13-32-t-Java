@@ -1,6 +1,8 @@
 <div class="nav-superior">
     <div class="nav-logo">
-        <a routerLink="/home" routerLinkActive="activo" class="activo">SILVER 40</a>
+        <app-nav-bartop-directive></app-nav-bartop-directive>
+       
+        
     </div>
     <div class="dashboard-content">
         <div class="user-logo" (click)="toggleDropdown()">
@@ -9,3 +11,4 @@
         <app-drop-down-window [isDropdownOpen]="isDropdownOpen" (toggleDropdownEvent)="toggleDropdown()"></app-drop-down-window>
     </div>
 </div>
+

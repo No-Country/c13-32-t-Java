@@ -1,0 +1,155 @@
+.login-container{
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  height: 580px;
+  width: 520px;
+  border-radius: 60px;
+  text-align: center;
+}
+h2{
+  /* Te damos la bienvenida a Silver 40 */
+  width: 410px;
+  height: 30px;
+  left: calc(50% - 410px/2);
+  
+  /* Subtitle 1 */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  
+  color: #000000;
+}
+form{
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+  
+form  button{
+  margin-left: 0%;
+  display: flex;
+  background-color: white;
+  color: black;
+  border: solid 1px;
+  width: 400px;
+  height: 48px;
+  border-radius: 60px ;
+  justify-content: center;
+  margin-top:16px;
+  margin-bottom:16px;
+  /* BUTTON */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height */
+  text-align: center;
+}
+
+form  button:hover{
+  background-color: #084656;
+  color: white;
+  border: solid 1px black;
+}
+  
+
+button{
+  display: flex;
+  background-color: white;
+  color: black;
+  border: solid 1px;
+  width: 400px;
+  height: 48px;
+  border-radius: 60px ;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 10px;
+
+}
+button:hover{
+  background-color: #084656;
+  color: white;
+  border: solid 1px black;
+}
+button p{
+  width: 90%;
+  /* BUTTON */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height */
+  text-align: center;
+  margin-top: 7px;
+
+}
+a{
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  height: 19px;
+  text-align: center;
+  
+  /* Body 3 */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12.8px;
+  line-height: 19px;
+  
+}
+/* Modificamos los estilos de los campos de formulario de Angular Material*/
+
+
+form a{
+  margin-top: 10px;
+  text-decoration: none;
+  width: 100%;
+  height: 19px;
+  text-align: center;
+  /* Body 3 */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12.8px;
+  line-height: 19px;
+  
+  color: #000000; 
+}
+.form-group input{
+  width: 400px;
+  height: 48px;
+  border-radius: 60px;
+  /* Body 2 */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height */
+  
+  color: #0F0F0F;
+  margin-top: 16px;
+  border: solid 1px black;
+  padding: 20px;
+
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 2px; /* Espacio entre el campo de entrada y el mensaje de advertencia */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+}
+

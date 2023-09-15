@@ -1,0 +1,14 @@
+<div *ngIf="mostrarComponente">
+    <!-- Contenido de tu componente que se mostrará si la condición es verdadera -->
+    <a routerLink="/home"  class="activo">
+        <img src="../../../../assets/logo.svg" alt="Logo de la página de inicio" />
+    </a>
+</div>
+<div *ngIf="!mostrarComponente">
+    <a routerLink="/other-page">
+        <img src="../../../../assets/arrow-check.svg" alt="Flecha" />{{ pagina}}
+   </a>
+</div>
+
+
+

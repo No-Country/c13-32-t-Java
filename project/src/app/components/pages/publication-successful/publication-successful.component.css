@@ -1,0 +1,57 @@
+.contenedor{
+    display: flex;
+    width: 1083px;
+    align-items: center;
+    height: 1366px;
+}
+.contenedor h2{
+    /* Headline 2 */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 39.06px;
+    line-height: 59px;
+    /* identical to box height */
+    text-align: center;
+    
+    color: #000000;
+}
+.contenedor h4{
+    /* Body 1 */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    
+    color: #000000;
+}
+.buttons{
+    width: 624px;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+}
+.buttons button{
+    background-color: transparent;
+    color: #084656;
+    border-radius: 60px;
+    width: 300px;
+    height: 56px;
+    border: solid 1px #084656;
+    /* Botón */
+
+    /* BUTTON */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+    text-align: center; 
+}
+.buttons button:hover{
+    color: white;
+    background-color: #084656; 
+}

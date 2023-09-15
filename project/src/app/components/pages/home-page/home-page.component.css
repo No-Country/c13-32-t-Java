@@ -2,6 +2,9 @@
     width: 100%;
     margin: 0%;
     padding: 0%;
+    justify-content: flex-start;
+    
+
 }
 .header {
   text-align: center;
@@ -37,6 +40,8 @@
     text-align: justify;
 }
 .header-bottom-contenido h2{
+    /* La oportunidad que buscabas */
+
     width: 775px;
     height: 73px;
     left: 95px;
@@ -44,12 +49,13 @@
     
     /* Headline 1 */
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 500;
     font-size: 48.83px;
     line-height: 73px;
     
-    color: #000000;  
+    color: #0F0F0F;
+    
+    
 }
 .header-bottom-contenido p{
 
@@ -97,16 +103,15 @@ color: #000000;
 .about-title{
     width: 100%;
     height: 5%;
-    font-size: 1.8rem;
     display: flex;
     justify-content: center;
 }
 .about-title h3{
-    width: 375px;
+    /* ¿Por qué elegirnos? */
+    width: 100%;
     height: 59px;
     left: 496px;
-    top: 614px;
-    
+    top: 598px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 300;
@@ -115,7 +120,7 @@ color: #000000;
     /* identical to box height */
     text-align: center;
     
-    color: #000000;
+    color: #000000;  
 }
 
 .about-images{
@@ -124,11 +129,12 @@ color: #000000;
     height: 368px;
     justify-content: space-around;
     align-items: center;
+    margin-top: 30px;
     
 }
 .about-container{
     height: 80%;
-    width: 30%;
+    width: 33%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -160,11 +166,26 @@ color: #000000;
     flex-grow: 0;
 }
 .container-about-text p{
-    font-size: 1.2rem;
+
+    width: 330px;
+    /* Body 1 */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #7C797A;
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    
 }
 .divider{
     
-    margin-top: 50px;
+    margin-top: 100px;
     width: 1000px;
     height: 1px;
     
@@ -188,20 +209,25 @@ color: #000000;
     height: 50%;
 }
 .title h4{
-    width: 558px;
-    height: 118px;
-    
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 39.06px;
-    line-height: 59px;
-    
-    color: #0F0F0F;
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+   /* Donde encontrarás talento comprometido y experimentado */
+   width: 700px;
+   height: 118px;
+   
+   /* Headline 2 */
+   font-family: 'Poppins';
+   font-style: normal;
+   font-weight: 300;
+   font-size: 39.06px;
+   line-height: 59px;
+   
+   color: #000000;
+   
+   
+   /* Inside auto layout */
+   flex: none;
+   order: 0;
+   flex-grow: 0;
+   
 }
 .user-left-container{
     width: 434px;
@@ -241,7 +267,7 @@ color: #000000;
     width: 632px;
     height: 262px;
     align-items: flex-start;
-    text-align: flex-start;
+    text-align: start;
     line-height: 2em;
 }
 .user-text-left ol{
@@ -256,11 +282,8 @@ color: #000000;
     line-height: 30px;
     
     color: #7C797A;
+     list-style-type: disc;
     
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    flex-grow: 0;   
 }
 .user-right{
     display: flex;
@@ -273,9 +296,9 @@ color: #000000;
     width: 632px;
     height: 262px;
     align-items: flex-start;
-    text-align: flex-start;
+    text-align: start;
     line-height: 2em; 
-    transform: translatex(300px);
+    transform: translatex(200px);
 }
 .user-text-right ol{
 
@@ -287,13 +310,9 @@ color: #000000;
     font-weight: 400;
     font-size: 20px;
     line-height: 30px;
-    
     color: #7C797A;
+    list-style-type: disc;
     
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    flex-grow: 0;   
 }
 
 .user-img-right{

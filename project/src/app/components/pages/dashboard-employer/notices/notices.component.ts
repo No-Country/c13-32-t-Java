@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './notices.component.html',
   styleUrls: ['./notices.component.css']
 })
-
 export class NoticesComponent {
 
 }

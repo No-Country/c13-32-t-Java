@@ -1,0 +1,38 @@
+<!-- Formulario principal -->
+<form [formGroup]="form" class="form">
+    <div class="form-bottom">
+
+      <h3>Sobre el puesto de trabajo</h3>
+      <shared-input-text formControlName="firstName" label="¿Qué puesto quieres cubrir? Será el nombre del aviso" placeholder="Nombre" [errors]="getControlErrors('firstName')"></shared-input-text>
+      <div class="form-bottom-1">
+          <shared-select label="Área del puesto" formControlName="areas" [options]="areas"></shared-select>
+          <shared-input-text formControlName="firstName" label="Cantidad de vacantes" placeholder="Nombre" [errors]="getControlErrors('firstName')"></shared-input-text>
+          <shared-select label="Carga horaria" formControlName="jornadas" [options]="jornadas"></shared-select>
+          <shared-select label="Tipo de contratación" formControlName="contratacion" [options]="contratacion"></shared-select>
+          <shared-select label="Modalidad de trabajo" formControlName="modalidad" [options]="modalidad"></shared-select>
+          <shared-select label="Rango de sueldo" formControlName="sueldo" [options]="sueldo"></shared-select>
+          <shared-select label="¿En qué provincia?" formControlName="provincia" [options]="provincia">
+          </shared-select>
+          <shared-select label="¿En qué ciudad?" formControlName="ciudad" [options]="ciudades">
+          </shared-select>
+      </div>
+      
+    </div>
+    <div class="form-2">
+      <h3>Sobre el postulante</h3>
+      <shared-select label="¿Qué nivel de experiencia buscas?" formControlName="experiencia" [options]="experiencia"></shared-select>
+      <shared-select label="Disponibilidad" formControlName="disponibilidad" [options]="disponibilidad" ></shared-select>
+
+    </div>
+    <div class="form-3">
+      <h3>Cuéntanos los detalles del puesto</h3>
+      <div class="detalle">
+        <shared-input-text label="Breve detalle del puesto" type="textarea" formControlName="jobDescription" [errors]="getControlErrors('jobDescription')" id="derecha"></shared-input-text>
+      </div>
+      <shared-input-text formControlName="tareasCumplir" label="Tareas a cumplir" placeholder="Nombre" [errors]="getControlErrors('tareasCumplir')"></shared-input-text>
+      <shared-input-text formControlName="requisitosPuesto" label="Requisitos del puesto" placeholder="Nombre" [errors]="getControlErrors('requisitosPuesto')"></shared-input-text>
+      <shared-input-text formControlName="beneficiosTrabajador" label="Beneficios para el trabajador" placeholder="Nombre" [errors]="getControlErrors('beneficiosTrabajador')"></shared-input-text>
+    </div>
+</form>
+
+  

@@ -1,0 +1,112 @@
+.form{
+    width: 678px;
+    height: 888px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 60px;
+    background-color: #FBFBFB;
+    justify-content: center;
+    align-items: center;
+}
+.form-bottom{
+    width:624px;
+    height: 609px;
+    display: flex;
+    flex-direction: column;
+}
+.form-bottom shared-select {
+
+    /* Body 2 */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+    color: #000000;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.divider h2{ 
+    
+    margin-top: 10px;
+    /* Body 2 */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    
+}
+.archivo{
+    margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 44px;
+}
+.archivo p{
+    /* BUTTON */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+    
+    color: #084656;
+    
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.divider p{
+    /* Body 2 */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+
+    color: #626262;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    
+}
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    width: 611px;
+    height: 88px;
+    justify-content: space-between;
+}
+.contenedor shared-select{
+    width: 45%;
+} 
+.contenedor-bottom{
+    width: 611px;
+    height: 222px;
+}
+.contenedor-bottom shared-input-text{
+    border-radius: 60px;
+    width: 100%;
+    height: 190px;
+}
+.foto{
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+}

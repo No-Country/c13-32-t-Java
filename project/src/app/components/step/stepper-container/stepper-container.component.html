@@ -1,0 +1,80 @@
+<div class="contenedor">
+    <app-nav-bar></app-nav-bar>
+    <h1>step {{ getCurrentStep() }}</h1>
+    <div *ngIf="mostrarComponente" class="tittle">
+        <h2 id="title">Bienvenido! Crea tu cuenta de Empresa</h2>
+        <h4>Completa este formulario para publicar tu primer aviso</h4>
+        <div class="title-content">
+            <div class="tittle-content-inf">
+                <img src="../../../../assets/registro-empresa-1.svg" alt="">
+                <p>Datos empresariales</p>
+            </div>
+            <div class="divider">
+    
+            </div>
+            <div class="title-content-inf">
+                <img src="../../../../assets/registro-empresa-2.svg" alt="">
+                <p class="texto">Datos de Perfil</p> 
+            </div>
+            <div class="divider">
+                
+            </div>
+            <div class="title-content-inf">
+                <img src="../../../../assets/registro-empresa-3.svg" alt="">
+                <p>Crea tu primer Aviso</p>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="mostrarComponente2" class="tittle">
+        <h2 id="title">¡Felicitaciones! Ya creaste tu cuenta</h2>
+        <h4>Ahora cuéntanos un poco más, en el siguiente paso podrás crear tu primer aviso.</h4>
+        <div class="title-content">
+            <div class="tittle-content-inf">
+                <img src="../../../../assets/registro-empresa-1.svg" alt="">
+                <p>Datos empresariales</p>
+            </div>
+            <div class="divider">
+    
+            </div>
+            <div class="title-content-inf">
+                <img src="../../../../assets/registro-empresa-4.svg" alt="">
+                <p class="texto">Datos de Perfil</p> 
+            </div>
+            <div class="divider">
+                
+            </div>
+            <div class="title-content-inf">
+                <img src="../../../../assets/registro-empresa-3.svg" alt="">
+                <p>Crea tu primer Aviso</p>
+            </div>
+        </div>
+    </div>
+   
+    <!-- Contenido del paso actual -->
+    <div *ngIf="mostrarComponente" class="step2">
+        <app-form-register-employer-init></app-form-register-employer-init>
+        <button class="buton" (click)="nextStep()" [disabled]="getCurrentStep() === 2">Siguiente</button>
+    </div>
+    <div *ngIf="mostrarComponente2">
+        <app-form-register-employer-second></app-form-register-employer-second>
+        <div class="contenedor-step2">
+            <button (click)="prevStep()" [disabled]="getCurrentStep() === 1">Finalizar</button>
+            <button (click)="nextStep()" [disabled]="getCurrentStep() === 1">Crear mi primer aviso</button>
+        </div>
+    </div>
+    <!-- Contenido del tercer paso -->
+    <div *ngIf="mostrarComponente3" class="step3">
+        <h2>Nuevo Aviso de Empleo</h2>
+        <p>Vamos a crear un nuevo aviso. Puedes publicarlo o guardarlo en el borrador.</p>
+        <app-form-register-ofer></app-form-register-ofer>
+
+        <div class="contenedor-step3">
+          <button (click)="prevStep()" [disabled]="getCurrentStep() === 1">Atrás</button>
+          <button (click)="nextStep()" [disabled]="getCurrentStep() === 3">Finalizar</button>
+        </div>
+    </div>
+
+    
+    
+</div>
+  

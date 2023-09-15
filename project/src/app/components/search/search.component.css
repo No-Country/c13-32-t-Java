@@ -1,0 +1,52 @@
+.search-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+}
+
+.input-left{
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    width: 50%;
+    height: 50%;
+    background-color: transparent;
+    border: 1px solid #000000;
+    padding-left: 40px; 
+    background: url('../../../assets/maletin1.svg') no-repeat left center;
+    background-size: 30px 30px;
+    background-position: 10px center;
+}
+.input-right{
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    width: 50%;
+    height: 50%;
+    background-color: transparent;
+    border: 1px solid #000000;
+    padding-left: 40px; 
+    background: url('../../../assets/ubicacion1.svg') no-repeat left center;
+    background-size: 30px 30px;
+    background-position: 10px center;
+}
+
+
+.search-button{
+    border-radius: 24px;
+    width: 6%;
+    height: 8%;
+    position: absolute;
+    transform: translateX(35em);
+    background-color: #084656;
+    border: 1px solid #000000;
+
+}
+.search-button:hover {
+    background-color: rgb(10, 10, 10);
+}
+.search-button img{
+    width: 40px;
+    height: 40px;
+}

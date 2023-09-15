@@ -1,0 +1,50 @@
+<form [formGroup]="form" class="form">
+    <div class="form-top">
+        <div  class="foto">
+            <div class="position-relative">
+                <h3>Subir imagen</h3>
+                <input class="input-file" (change)="capturarFile($event)" type="file">
+                <div class="preview-img" *ngIf="previsualizacion">
+                    <button class="clear-image" type="button" (click)="clearImage()">Clear</button>
+                    <img  [src]="previsualizacion" alt="">
+                </div>
+              
+                <div class="p-1">
+                    <small>Se aceptan archivos imágenes de tipo .png</small>
+                </div>
+                <div class="wrapper-button" *ngIf="previsualizacion">
+                    <button type="button" class="button" [disabled]="loading" >
+                        {{(loading) ? 'Cargando.....' : 'Subir Archivo'}}
+                    </button>
+                </div>
+          
+            </div>
+            
+        </div>
+    </div>
+    <div class="form-bottom">
+        <shared-select label="Industria" formControlName="industry" [options]="industries">
+        </shared-select>
+        
+        <div class="divider">
+            <h2>Verificación de Empresa</h2>
+            <p>Te pediremos que subas la constancia de inscripción en AFIP para verificar que la empresa sea verídica y así transmitir confianza a nuestros postulantes. 
+                Puedes completar este paso luego.
+            </p>
+        </div>
+        <div class="archivo">
+            <input type="file" (change)="onFileSelected($event)" accept=".jpg, .png, .pdf">
+            <p >Subir constancia de inscripción</p>
+        </div>
+        <div class="contenedor">
+            <shared-select label="Cantidad de Sucursales" formControlName="branchOffices" [options]="ranges">
+            </shared-select>
+            <shared-select label="Cantidad de Empleados" formControlName="employees" [options]="ranges">
+            </shared-select>
+        </div>
+        <div class="contenedor-bottom">
+            <shared-input-text label="Descripción de la Empresa" type="textarea" formControlName="companyDescription" [errors]="getControlErrors('companyDescription')">
+            </shared-input-text>
+       </div>
+    </div>
+</form>

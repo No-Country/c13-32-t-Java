@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     background-color: #084656;
+    margin-top: 50px;
   }
   .footer-left{
       display: flex;
@@ -27,10 +28,39 @@
   }
   .footer-list-left ul{
       list-style-type: none;
+  
+      
+      /* Body 1 */
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 30px;
+      /* identical to box height */
+      
+      color: #FFFFFF;
+      text-align: flex-start;
+      
+      
+      /* Inside auto layout */
+      flex: none;
+      order: 0;
+      flex-grow: 0;
   }
+  
   .footer-list-left  h4{
-      margin-bottom: 0px;
-      font-size: 1.4em;
+      /* Sobre nosotros */
+      width: 222px;
+      height: 30px;
+      
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 25px;
+      line-height: 30px;
+      
+      color: #FFFFFF;
+      
   }
   .footer-list-right{
       display: flex;
@@ -47,11 +77,36 @@
       text-align: center;
   }
   .footer-list-right  h4{
-      margin-bottom: 0px;
-      font-size: 1.4em;
+      /* Sobre nosotros */
+      width: 222px;
+      height: 30px;
+      
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 25px;
+      line-height: 30px;
+      
+      color: #FFFFFF;
   }
   .footer-list-right ul{
       list-style-type: none;
+       /* Body 1 */
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 30px;
+      /* identical to box height */
+      
+      color: #FFFFFF;
+      text-align: start;
+      
+      
+      /* Inside auto layout */
+      flex: none;
+      order: 0;
+      flex-grow: 0;
   }
   .list-2{
       margin-bottom: -20px;
@@ -67,12 +122,17 @@
       
   }
   .footer-right h4{
-      font-size: 1.6em;
-      color: white;
-      margin-bottom: 5px;
-      width: 100%;
-      text-align: center;
-  
+      /* Sobre nosotros */
+      width: 222px;
+      height: 30px;
+      
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 25px;
+      line-height: 30px;
+      
+      color: #FFFFFF;
   }
   .footer-icon{
       width: 40%;

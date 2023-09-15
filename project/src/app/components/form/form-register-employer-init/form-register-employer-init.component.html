@@ -1,0 +1,48 @@
+
+<form [formGroup]="form" class="form">
+  <h3>Datos de usuario</h3>
+  <div class="contenedor-1">
+    <shared-input-text formControlName="firstName" label="Nombre(s)" placeholder="Nombre" [errors]="getControlErrors('firstName')"></shared-input-text>
+    <shared-input-text formControlName="lastName" label="Apellido(s)" placeholder="Apellido" [errors]="getControlErrors('lastName')"></shared-input-text>
+  </div>
+  <div class="divider"></div>
+  <div formGroupName="myGroup" class="circular-checkbox">
+    <div class="radio-button">
+      <div><input type="radio" formControlName="selectedOption" value="option1" id="option1" /></div>
+      
+      <label for="option1">Soy una empresa</label>
+    </div>
+    <div class="radio-button">
+      <div><input type="radio" formControlName="selectedOption" value="option2" id="option2" /></div>
+      
+      <label for="option2">Soy una consultora de RR HH</label>
+    </div>
+  </div>
+  
+  
+  <shared-input-text formControlName="firstName" label="Nombre de la empresa" placeholder="Nombre de la empresa" [errors]="getControlErrors('firstName')"></shared-input-text>
+  <div class="contenedor">
+    <form formGroupName="condition" class="condition">
+      <shared-select label="condicionFiscal" formControlName="condicionFiscal" placeholder="" [options]="indentifyTypes"></shared-select>
+    </form>
+    <shared-input-text formControlName="phone" label="Cuit(sin guiones)" placeholder="Cuit"></shared-input-text>
+  </div>
+  <div class="contenedor-2">
+    <shared-input-text formControlName="firstName" label="Domicilio fiscal" placeholder="Domicilio fiscal" [errors]="getControlErrors('firstName')"></shared-input-text>
+  </div>
+  <div class="contenedor">
+    <form formGroupName="location" class="location">
+      <shared-select label="provincia" formControlName="province" [options]="indentifyTypes"></shared-select>
+      <shared-select label="ciudad"  formControlName="city" [options]="indentifyTypes"></shared-select>
+    </form>
+  </div>
+ 
+  <div class="contenedor-2">  
+    <shared-input-text formControlName="firstName" label="Telefono" placeholder="Telefono" [errors]="getControlErrors('firstName')"></shared-input-text>
+  </div>
+  
+  <form formGroupName="termsAndConditions" class="termsAndConditions">
+    <shared-checkbox formControlName="legalConditions" label="Acepto el Uso del servicio y las Condiciones legales."></shared-checkbox>
+    <shared-checkbox formControlName="sendingEmailsPolicy" label="Acepto la Política de envío de emails"></shared-checkbox>
+  </form>
+</form>

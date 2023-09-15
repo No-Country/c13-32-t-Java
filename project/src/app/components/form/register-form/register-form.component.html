@@ -1,0 +1,25 @@
+
+<form [formGroup]="registerForm" (submit)="submitRegister()">
+
+    <!-- Email -->
+    <div class="contenido">
+      <input matInput placeholder="Escribe tu correo electrónico" formControlName="email" />
+      <mat-error *ngIf="email?.errors?.['required'] && email?.touched">
+        El campo email es obligatorio
+      </mat-error>
+      <mat-error *ngIf="email?.errors?.['email'] && email?.touched">
+        El formato del email no es correcto
+      </mat-error>
+    </div>
+    <!-- Password -->
+    <div class="contenido">
+      <input type="password" matInput placeholder="Escribe tu contraseña" formControlName="password" />
+      <mat-error *ngIf="email?.errors?.['required'] && email?.touched">
+        El campo password es obligatorio
+      </mat-error>
+    </div>
+    <!-- Botón para hacer submit del formulario -->
+    <!-- Deshabilitado si el formulario de login es inválido -->
+    <button  type="submit" mat-raised-button color="primary" routerLink="/registro-empresa" [disabled]="registerForm.invalid"><p>Registrarme</p></button>
+    
+</form>
